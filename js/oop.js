@@ -1,53 +1,67 @@
-// function Person(name, gender, age) {
-//     this.name = name;
-//     this.gender = gender;
-//     this.age = age
-// }
+// Encapsulation
 
-// var personOne = new Person('Omar', 'Male', 22)
-// var testPerson = {
-//     name: "Ali",
-//     gender: "Male",
-//     age: 20
-// }
-// console.log(personOne);
-// console.log(testPerson);
-//////////////////////////////////////////////////////////////////////////////
 class Person {
-    constructor(name, gender, age) {
+    constructor(name, age) {
         this.name = name;
-        this.gender = gender;
         this.age = age;
     }
 
-    showData() {
-        return "Hello " + this.name + " Your age is " + this.age
+    greet() {
+        // return("Hello " + this.name + " your age is " + this.age);
+        return (`Hello ${this.name} your age is ${this.age}`);
+    }
+
+}
+
+const person1 = new Person('John', 30);
+
+
+
+console.log(person1.greet()); // Hello John
+
+
+// Polymorphism
+class Animal {
+    name = "Animal";
+    speak() {
+        console.log(this.name + " speaks");
     }
 }
 
-// var personOne = new Person('Omar', 'Male', 22)
+const myAnimal = new Animal();
+myAnimal.speak(); // Animal speaks
 
-// console.log(personOne);
-// console.log(personOne.showData())
-
-
-class Student extends Person {
-    constructor(name, age, gender, grade) {
-        super(name, age, gender);
-        this.grade = grade
+////////////////////////
+class Dog extends Animal {
+    name = "Dog";
+    speak() {
+        console.log(this.name + " barks");
     }
 }
 
-var studentOne = new Student("Malek", "Male", 10, "Five")
-
-console.log(studentOne)
-console.log(studentOne.showData())
+const myDog = new Dog();
+myDog.speak(); // Dog barks
 
 
-String.prototype.kimit = (user,course) => {
-    return user + course
+
+//  Abstraction
+class Car {
+    #enginStatus = false; // private property
+
+    start() {
+        this.#enginStatus = true;
+        // this.#enginStatus ? console.log("Car started") : console.log("Car not started");
+
+        if (this.#enginStatus) {
+            console.log("Car started");
+        }
+        else {
+            console.log("Car not started");
+        }
+    }
 }
 
-var myName ="Mohamed"
+const myCar = new Car();
+myCar.start(); // Car started
 
-console.log()
+// console.log(myCar.#enginStatus)
