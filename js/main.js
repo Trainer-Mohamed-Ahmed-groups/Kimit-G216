@@ -1,114 +1,52 @@
-var x = 1;
-while (x <= 10) {
-    console.log(x);
-    x++;
+const myDate = new Date();
+
+console.log(myDate)
+
+
+
+const d = new Date("2024-02-25");
+let arrival = d.getTime();
+
+const d2 = new Date("2024-03-02")
+let leave = d2.getTime()
+
+console.log((leave - arrival) / 1000 / 60 / 60 / 24)
+
+// BOM => Browser object model
+
+// alert("This is alert")
+
+// var isUsername = confirm("Are u a user");
+
+// console.log(isUsername)
+
+
+// var username = prompt("Please enter your username");
+
+// console.log(username);
+
+///////////////////////////////////////////////
+console.log(window.innerHeight)
+console.log(window.innerWidth)
+
+function goToGoogle() {
+    location.assign('http://google.com/')
+    history.go()
 }
 
 
-console.log("*".repeat(20))
-/*
-    Syntax error =>   varr 
-    Logical error 
-    Runtime error 
-*/
+// localStorage.setItem("courseName", "Fullstack")
+// console.log(localStorage.length)
+// console.log(localStorage.key(0))
 
-var y = 1;
-do {
-    console.log(y)
-    y++;
-} while (y <= 10);
+// document.getElementById('course_name').innerText = localStorage.getItem('courseName')
+// localStorage.getItem("courseName")
 
-
-console.log("*".repeat(20))
-
-for (var i = 0; i <= 10; i++) {
-    if (i % 2 === 1) { continue }
-    console.log(i)
-}
-
-
-console.log("*".repeat(20))
-
-
-
-
-
-// +=  &&  ||
-
-console.log(10 && true && undefined && 5);
-
-// And operator returns first false and last true
-
-console.log(null || [] || undefined || 5);
-
-//  Or operator returns first true and last false
-
-
-
-var q = 0;
-
-if (q == "asdasd") { console.log("first") }
-
-
-
-if ("sadfsadf") { console.log("dsfasdfsda") }
-else {
-    console.log("sdfsdf")
-}
-
-
-var courseName = "Frontend development"
-
-if (10 > 9) {
-    console.log("OK")
-}
-
-/********************* Variables declarations  *************************** */
-
-
-console.log(t)
-var t = 45;
-
-
-// function hello() {
-//     var p = 4564;
-// }
-// console.log(p)
-
-
-// Block scope
-/*
-{
-    var p = 78;
-}
-console.log(p)
-
-*/
-
-
-let p = 2;
-
-console.log(p)
-////////////////////////////////////////////////////////////
-
-
-sayOk()
-
-// var sayOk = function () {
-//     console.log("OK")
+// function removeCourseName() {
+//     localStorage.removeItem('courseName')
 // }
 
-function sayOk() { console.log("OK") }
+// sessionStorage.setItem("test", "This is a test for session")
+// localStorage.setItem("test", "This is a test for local")
 
-
-console.log(55 === 55)
-console.log(10 + "78")
-console.log(typeof (10 + "78"))
-console.log(9 * "5")
-
-
-console.log(+"88")
-
-
-console.log(parseInt("94.99"));
-console.log(parseFloat("94.25"));
+document.cookie = "username=MohamedAhmed;expires=Thu, 18 Dec 2033 12:00:00 UTC";
